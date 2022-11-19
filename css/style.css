@@ -1,5 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+h1{
+    font-size:40px;
+    margin-left:50px;
+    margin-top:30px;
+} 
+h2{
+    font-size:30px;
+    margin:10px;
+}
+h3{
+    font-size:15px;
+    margin-left:50px;
+    margin-top:10px;
+}
+h4{
+    font-size:15px;
+    color:#9a9999;
+    margin-left:50px;
+    margin-top:10px;
+    margin-bottom:30px;
+    
+}
+.tuong .share{
+    border-top: var(--border);
+}
+li a{
+    width: 1500%;
+    color: #ff7800;
+}
+.tuong .boddy{
+    border-top: var(--border);
+}
+hr{
+    color: #ff7800;
+}
+h2{
+    font-size:30px;
+    
+}
 
+p,li{
+    font-size:20px;
+    text-indent:2%;
+    line-height:35px;
+    word-spacing: 2px;
+    padding:5px;
+}
+.img {
+    width: 60%;
+
+    display: flex;
+	/* flex-direction: column; */
+	justify-content: center;
+	text-align: center;
+	padding: 10px;
+	margin: 10px auto;
+    }
+.tuongvi{
+    justify-content: center;
+    display:flex;
+}
+.tuong{
+    width: 100%;
+    height:100%;
+}
+.share{
+    /* padding:20px; */
+    margin-left:30px;
+}
+.boddy{
+    /* padding:10px; */
+    margin-left:30px;
+}
+
+.tuongvi{
+    background: rgb(149, 149, 149);
+
+}
+.tuong{
+    background-color: #fff;
+}
 :root {
     --orange: #ff7800;
     --black: #130f40;
