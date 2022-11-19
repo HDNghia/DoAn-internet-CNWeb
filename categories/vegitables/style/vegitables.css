@@ -1,0 +1,11 @@
+.price {
+    font-size: 2rem;
+    color:var(--light-color);
+    padding:.5rem 0;
+}
+
+.stars i {
+    font-size: 1.7rem;
+    color:var(--orange);
+    padding:.5rem 0;
+}
