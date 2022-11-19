@@ -1,3 +1,18 @@
+// swiping banners
+let banner = document.querySelector('.home__banner');
+let activeIndex = 0;
+let prevSlide = null;
+let next = () => {
+  prevSlide?.removeAttribute('active');
+  prevSlide = banner.children[activeIndex];
+  banner.children[activeIndex].setAttribute('active', 'prev');
+  if (activeIndex == banner.children.length - 1) { activeIndex = 0; } 
+  else { activeIndex++; }
+  banner.children[activeIndex].setAttribute('active', 'next');
+}
+let looping = setInterval(next, 2000);
+// end swiping banners
+
 let searchForm = document.querySelector('.search-form');
 
 document.querySelector('#search-btn').onclick = () =>{
