@@ -301,6 +301,12 @@ section {
     font-size: 1.6rem;
 }
 
+.center {
+    display: block;
+    margin: auto;
+    width: 30%;
+}
+
 .footer {
     background: #fff;
 }

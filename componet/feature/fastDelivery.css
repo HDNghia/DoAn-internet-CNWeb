@@ -297,6 +297,12 @@ section {
     padding: 2rem 9%;
 }
 
+.main .center {
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
 .footer {
     background: #fff;
 }
