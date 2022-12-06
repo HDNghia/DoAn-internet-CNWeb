@@ -344,6 +344,11 @@ section {
     width: 10rem;
 }
 
+.cart-items {
+    height: 48rem;
+    overflow-y: scroll;
+}
+
 /* Nguyễn Đình Nhất - ends */
 
 .header .login-form {

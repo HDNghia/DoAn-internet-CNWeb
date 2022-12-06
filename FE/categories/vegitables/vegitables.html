@@ -51,34 +51,36 @@
         </form>
 
         <div class="shopping-cart">
-            <div class="box">
-                <i class="fas fa-trash"></i>
-                <img src="../../image/cart-img-1.png" alt="">
-                <div class="content">
-                    <h3>watermelon</h3>
-                    <span class="price">$4.99/-</span>
-                    <span class="quantity">qty : 1</span>
+            <div class="cart-items">
+                <div class="cart-item box">
+                    <i class="btn-remove fas fa-trash"></i>
+                    <img class="img-product-in-cart" src="../../image/cart-img-1.png" alt="">
+                    <div class="content">
+                        <h3 class="name-product">watermelon</h3>
+                        <span class="cart-price price">$4.99/-</span>
+                        <input class="cart-quantity-input" type="number" value="1">
+                    </div>
+                </div>
+                <div class="cart-item box">
+                    <i class="btn-remove fas fa-trash"></i>
+                    <img class="img-product-in-cart" src="../../image/cart-img-2.png" alt="">
+                    <div class="content">
+                        <h3 class="name-product">onion</h3>
+                        <span class="cart-price price">$4.99/-</span>
+                        <input class="cart-quantity-input" type="number" value="1">
+                    </div>
+                </div>
+                <div class="cart-item box">
+                    <i class="btn-remove fas fa-trash"></i>
+                    <img class="img-product-in-cart" src="../../image/cart-img-3.png" alt="">
+                    <div class="content">
+                        <h3 class="name-product">chicken</h3>
+                        <span class="cart-price price">$4.99/-</span>
+                        <input class="cart-quantity-input" type="number" value="1">
+                    </div>
                 </div>
             </div>
-            <div class="box">
-                <i class="fas fa-trash"></i>
-                <img src="../../image/cart-img-2.png" alt="">
-                <div class="content">
-                    <h3>onion</h3>
-                    <span class="price">$4.99/-</span>
-                    <span class="quantity">qty : 1</span>
-                </div>
-            </div>
-            <div class="box">
-                <i class="fas fa-trash"></i>
-                <img src="../../image/cart-img-3.png" alt="">
-                <div class="content">
-                    <h3>chicken</h3>
-                    <span class="price">$4.99/-</span>
-                    <span class="quantity">qty : 1</span>
-                </div>
-            </div>
-            <div class="total"> total : $19.69/- </div>
+            <div class="cart-total-price total"> total : $19.69/- </div>
             <a href="#" class="btn">checkout</a>
         </div>
 
@@ -396,6 +398,11 @@
 
     <!-- custom js file link  -->
     <script src="../../js/script.js"></script>
+
+     <!-- add or remove item in shopping cart -->
+     <script src="../js/adjustShoppingCart.js">
+        console.log("Hello, World!");
+     </script>
 
 </body>
 
