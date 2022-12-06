@@ -24,8 +24,10 @@ function ready() {
 };
 
 function removeItemInShoppingCart(event) {
-    var buttonClicked = event.target;
-    buttonClicked.parentElement.remove();
+    var buttonClicked = event.target.parentElement;
+    var nameProduct = buttonClicked.getElementsByClassName("name-product")[0].innerText;
+    localStorage.removeItem(nameProduct);
+    buttonClicked.remove();
     updateCartTotal();
 };
 
@@ -35,6 +37,11 @@ function quantityChanged(event) {
         input.value = 1;
     };
     updateCartTotal();
+    var productItem = input.parentElement;
+    var nameProduct = productItem.getElementsByClassName("name-product")[0].innerText;
+    var priceProduct = productItem.getElementsByClassName("cart-price")[0].innerText.replace("$", "").replace("/-", "");
+    var quantityProduct = productItem.getElementsByClassName("cart-quantity-input")[0].value;
+    updateLocalStorage(nameProduct, priceProduct, quantityProduct);
 };
 
 function addToCartClicked(event) {
@@ -54,8 +61,10 @@ function addItemToShoppingCart(name, price, imageSource) {
     var cartItems = document.getElementsByClassName("cart-items")[0];
     var cartNameItems = cartItems.getElementsByClassName("name-product");
     for(var i = 0; i < cartNameItems.length; i++) {
+        var cartInputItem = cartItems.getElementsByClassName("cart-quantity-input")[i];
         if (cartNameItems[i].innerText == name) {
-            alert("This product is already added to the shopping cart!");
+            cartInputItem.value++;
+            updateLocalStorage(name, price, parseInt(localStorage.getItem(name).split(",")[2]) + 1);
             return;
         }
     };
@@ -71,6 +80,7 @@ function addItemToShoppingCart(name, price, imageSource) {
     cartItems.append(cartBoxItem);
     cartBoxItem.getElementsByClassName("btn-remove")[0].addEventListener("click", removeItemInShoppingCart);
     cartBoxItem.getElementsByClassName("cart-quantity-input")[0].addEventListener("change", quantityChanged);
+    updateLocalStorage(name, price, 1);
 };
 
 function updateCartTotal() {
@@ -86,4 +96,8 @@ function updateCartTotal() {
         total += (price * quantity);
     };
     document.getElementsByClassName("cart-total-price")[0].innerText = "Total : $" + Math.round(total, 2) + "/-";
+};
+
+function updateLocalStorage(name, price, quantity) {
+    localStorage.setItem(name, [name, price.replace("$", ""), quantity]);
 };
