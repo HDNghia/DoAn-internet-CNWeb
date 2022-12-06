@@ -53,14 +53,14 @@ function addItemToShoppingCart(name, price, imageSource) {
     cartBoxItem.classList.add("box");
     var cartItems = document.getElementsByClassName("cart-items")[0];
     var cartNameItems = cartItems.getElementsByClassName("name-product");
-    for(var i = 0; i < cartNameItems.length; i++) {
+    for (var i = 0; i < cartNameItems.length; i++) {
         if (cartNameItems[i].innerText == name) {
             alert("This product is already added to the shopping cart!");
             return;
         }
     };
-    var cartBoxItemContens = 
-    `<i class="btn-remove fas fa-trash"></i>
+    var cartBoxItemContens =
+        `<i class="btn-remove fas fa-trash"></i>
     <img class="img-product-in-cart" src="${imageSource}" alt="">
     <div class="content">
         <h3 class="name-product">${name}</h3>
