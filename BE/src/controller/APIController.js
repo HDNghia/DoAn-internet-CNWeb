@@ -13,6 +13,7 @@ let createNewUser = async (req, res) => {
     if (!food || !price || !qty || !total || !order_date || !status || !customer_name || !customer_contact || !customer_email || !customer_address) {
         return res.status(200).json({
             message: 'missing requied params',
+            data: req.body
         })
     }
     await pool.execute('insert into tbl_order (food, price, qty, total, order_date, status, customer_name, customer_contact, customer_email, customer_address) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',

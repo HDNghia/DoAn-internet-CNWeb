@@ -43,23 +43,123 @@ for (var i = 0; i < localStorage.length; i++) {
 
 }
 
+//get data
+fetch('http://localhost:8080/api/v1/users')
+    .then(data => {
+        return data.json()
+    })
+    .then(data => {
+        console.log("check get data: ", data);
+    })
+//post data
+async function postData(url = '', data = {}) {
+    const response = await fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(data)
+    })
+    return response.json();
+}
+
+//delete data
+function deleteOrder(id) {
+    var option = {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
+    fetch('http://localhost:8080/api/v1/delete-user' + '/' + id, option)
+        .then(function (response) {
+            response.json();
+        })
+        .then(callback);
+}
+// deleteOrder(12);
+//Update data
+async function putData(url = '', data = {}) {
+    const response = await fetch(url, {
+        method: 'PUT',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(data)
+    })
+    return response.json();
+}
+// putData('http://localhost:8080/api/v1/update-user', {
+//     "food": "update",
+//     "price": 19,
+//     "qty": 1,
+//     "total": 123,
+//     "order_date": "ng",
+//     "status": "delivery",
+//     "customer_name": "nghia",
+//     "customer_contact": 123,
+//     "customer_email": "nghia@",
+//     "customer_address": "lvh",
+//     "id": 7
+// })
+
+
+
+
+
 $(".agreeOrder").click(function () {
-    var Name = $(".name").val();
-    var address = $(".address").val();
-    var phone = $(".phone").val();
-    var email = $(".email").val();
+    var data = {
+        food: "",
+        price: "",
+        qty: "",
+        total: "",
+        order_date: "",
+        status: "",
+        customer_name: "",
+        customer_contact: "",
+        customer_email: "",
+        customer_address: ""
+    }
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    today = mm + '/' + dd + '/' + yyyy;
+    data.customer_name = $(".name").val();
+    data.customer_address = $(".address").val();
+    data.customer_contact = $(".phone").val();
+    data.customer_email = $(".email").val();
     var name_product = [];
+    var price_product = 0;
     for (var i = 0; i < localStorage.length; i++) {
         var x = localStorage.getItem(localStorage.key(i));
-        name_product = name_product + " " + x.substring(x.indexOf(",") + 1, x.lastIndexOf(",") - 1)
-    }
-    console.log('check name product: ', name_product)
-    console.log(Name, address, phone, email)
-    getText()
-})
 
-// async function getText() {
-//     let x = await axios.get("http://localhost:8080/api/v1/users");
-//     alert('nghia')
-//     console.log(x);
-// }
+        name_product = name_product + " " + x.substring(x.indexOf(",") + 1, x.lastIndexOf(",") - 1)
+        price_product = price_product + parseInt(x.substring(x.lastIndexOf(",") + 2, x.length))
+    }
+    data.food = name_product;
+    data.status = "delivery";
+    data.order_date = "today";
+    data.price = price_product;
+    data.qty = "1";
+    data.total = price_product;
+    console.log('check data from card: ', data)
+    console.log('check name product: ', name_product)
+    console.log('check price: ', price_product)
+
+    postData('http://localhost:8080/api/v1/create-user', data)
+        .then(data => {
+            console.log(data);
+        })
+
+})
