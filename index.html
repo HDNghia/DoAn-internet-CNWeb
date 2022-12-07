@@ -6,6 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Complete Responsive Grocery Website Design Tutorial</title>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script> 
+    <script>  
+        $(function(){ 
+          $("#header").load("header.html");  
+          $("#footer").load("footer.html");  
+        }); 
+    </script>  
 
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
@@ -24,67 +31,7 @@
 
     <!-- header section starts  -->
 
-    <header class="header">
-
-        <a href="#" class="logo"> <i class="fa fa-cutlery" aria-hidden="true"></i> SUGOI </a>
-
-        <nav class="navbar">
-            <a href="#home">home</a>
-            <a href="#features">features</a>
-            <a href="#products">products</a>
-            <a href="#categories">categories</a>
-            <a href="#review">review</a>
-            <a href="#blogs">blogs</a>
-        </nav>
-
-        <div class="icons">
-            <div class="fas fa-bars" id="menu-btn"></div>
-            <div class="fas fa-search" id="search-btn"></div>
-            <div class="fas fa-shopping-cart" id="cart-btn"></div>
-            <a href="./tao trang login/login.html">
-                <div class="fas fa-user" id="login-btn"></div>
-            </a>
-        </div>
-
-        <form action="" class="search-form">
-            <input type="search" id="search-box" placeholder="search here...">
-            <label for="search-box" class="fas fa-search"></label>
-        </form>
-
-        <div class="shopping-cart">
-            <div class="box">
-                <i class="fas fa-trash"></i>
-                <img src="image/cart-img-1.png" alt="">
-                <div class="content">
-                    <h3>watermelon</h3>
-                    <span class="price">$4.99/-</span>
-                    <span class="quantity">qty : 1</span>
-                </div>
-            </div>
-            <div class="box">
-                <i class="fas fa-trash"></i>
-                <img src="image/cart-img-2.png" alt="">
-                <div class="content">
-                    <h3>onion</h3>
-                    <span class="price">$4.99/-</span>
-                    <span class="quantity">qty : 1</span>
-                </div>
-            </div>
-            <div class="box">
-                <i class="fas fa-trash"></i>
-                <img src="image/cart-img-3.png" alt="">
-                <div class="content">
-                    <h3>chicken</h3>
-                    <span class="price">$4.99/-</span>
-                    <span class="quantity">qty : 1</span>
-                </div>
-            </div>
-            <div class="total"> total : $19.69/- </div>
-            <a href="#" class="btn">checkout</a>
-        </div>
-
-
-    </header>
+    <div id="header"></div> 
 
     <!-- header section ends -->
 
@@ -429,56 +376,11 @@
 
     </section>
     <!-- blogs section ends -->
+   
 
+   
     <!-- footer section starts  -->
-
-    <section class="footer">
-
-        <div class="box-container">
-
-            <div class="box">
-                <h3> SUGOI <i class="fa fa-cutlery"></i> </h3>
-
-                <div class="share">
-                    <a href="#" class="fab fa-facebook-f"></a>
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                    <a href="#" class="fab fa-linkedin"></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <h3>contact info</h3>
-                <a href="#" class="links"> <i class="fas fa-phone"></i> +123-456-789 </a>
-                <a href="#" class="links"> <i class="fas fa-phone"></i> +111-222-3333 </a>
-                <a href="#" class="links"> <i class="fas fa-envelope"></i> Group6@gmail.com </a>
-                <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i> Hochiminh city </a>
-            </div>
-
-            <div class="box">
-                <h3>quick links</h3>
-                <a href="#" class="links"> <i class="fas fa-arrow-right"></i> home </a>
-                <a href="#" class="links"> <i class="fas fa-arrow-right"></i> features </a>
-                <a href="#" class="links"> <i class="fas fa-arrow-right"></i> products </a>
-                <a href="#" class="links"> <i class="fas fa-arrow-right"></i> categories </a>
-                <a href="#" class="links"> <i class="fas fa-arrow-right"></i> review </a>
-                <a href="#" class="links"> <i class="fas fa-arrow-right"></i> blogs </a>
-            </div>
-
-            <div class="box">
-                <h3>newsletter</h3>
-                <p>subscribe for latest updates</p>
-                <input type="email" placeholder="your email" class="email">
-                <input type="submit" value="subscribe" class="btn">
-                <img src="image/payment.png" class="payment-img" alt="">
-            </div>
-
-        </div>
-
-        <div class="credit"> created by <span>Team 6</span> | all rights reserved </div>
-
-    </section>
-
+    <div id="footer"></div> 
     <!-- footer section ends -->
     <!-- Snow effects -->
     <div class="snowflakes" aria-hidden="true">
