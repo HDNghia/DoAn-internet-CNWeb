@@ -4,7 +4,7 @@ localStorage.setItem("login", true);
 
 for (var i = 0; i < localStorage.length; i++) {
     //add-card
-    if (localStorage.key(i) != "login") {
+    if (localStorage.key(i) != "login" || localStorage.key(i) == "id") {
         var tr = document.createElement("tr");
         var img = document.createElement("img");
         var remove = document.createElement("input");
@@ -46,16 +46,17 @@ for (var i = 0; i < localStorage.length; i++) {
 }
 
 //get data
-fetch('http://localhost:8080/api/v1/users')
-    .then(data => {
-        return data.json()
-    })
-    .then(data => {
-        console.log("check get data: ", data);
-        for (var i = 0; i < data.data.length; i++) {
-            console.log(data.data[i].id);
-        }
-    })
+// fetch('http://localhost:8080/api/v1/users')
+//     .then(data => {
+//         return data.json()
+//     })
+//     .then(data => {
+//         console.log("check get data: ", data);
+//         for (var i = 0; i < data.data.length; i++) {
+//             console.log(data.data[i].id);
+
+//         }
+//     })
 
 //post data
 async function postData(url = '', data = {}) {
@@ -75,36 +76,35 @@ async function postData(url = '', data = {}) {
 }
 
 //delete data
-function deleteOrder(id) {
-    var option = {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    };
-    fetch('http://localhost:8080/api/v1/delete-user' + '/' + id, option)
-        .then(function (response) {
-            response.json();
-        })
-        .then(callback);
-}
-// deleteOrder(12);
+// function deleteOrder(id) {
+//     var option = {
+//         method: 'DELETE',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         }
+//     };
+//     fetch('http://localhost:8080/api/v1/delete-user' + '/' + id, option)
+//         .then(function (response) {
+//             response.json();
+//         })
+//         .then(callback);
+// }
 //Update data
-async function putData(url = '', data = {}) {
-    const response = await fetch(url, {
-        method: 'PUT',
-        mode: 'cors',
-        cache: 'no-cache',
-        credentials: 'same-origin',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        redirect: 'follow',
-        referrerPolicy: 'no-referrer',
-        body: JSON.stringify(data)
-    })
-    return response.json();
-}
+// async function putData(url = '', data = {}) {
+//     const response = await fetch(url, {
+//         method: 'PUT',
+//         mode: 'cors',
+//         cache: 'no-cache',
+//         credentials: 'same-origin',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         redirect: 'follow',
+//         referrerPolicy: 'no-referrer',
+//         body: JSON.stringify(data)
+//     })
+//     return response.json();
+// }
 // putData('http://localhost:8080/api/v1/update-user', {
 //     "food": "update",
 //     "price": 19,
@@ -150,7 +150,7 @@ $(".agreeOrder").click(function () {
         var name_product = [];
         var price_product = 0;
         for (var i = 0; i < localStorage.length; i++) {
-            if (localStorage.key(i) == "login") { }
+            if (localStorage.key(i) == "login" || localStorage.key(i) == "id") { }
             else {
                 var x = localStorage.getItem(localStorage.key(i));
                 name_product = name_product + " " + x.substring(x.indexOf(",") + 1, x.lastIndexOf(",") - 1)

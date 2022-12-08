@@ -54,6 +54,31 @@ let deleteUser = async (req, res) => {
         data: rows
     })
 }
+let getDetailUser = async (req, res) => {
+
+    console.log('check id: ', req.params.id);
+    let userId = req.params.id;
+    if (!userId) {
+        return res.status(200).json({
+            message: 'missing requied params'
+        })
+    }
+    try {
+        const [rows, fields] = await pool.execute('select * from tbl_order where id = ?', [userId]);
+        return res.status(200).json({
+            message: 'oke',
+            data: rows
+        })
+    } catch (error) {
+        return res.status(200).json({
+            message: 'error',
+            data: error
+        })
+    }
+    // await pool.execute('select * from tbl_order where id = ?', [tbl_order])
+
+}
+
 module.exports = {
-    getAllUser, createNewUser, updateUser, deleteUser
+    getDetailUser, getAllUser, createNewUser, updateUser, deleteUser
 }
