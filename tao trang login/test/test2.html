@@ -1,12 +1,22 @@
 <!DOCTYPE html>
+<html lang="en" >
+<head>
+ 
+  <link rel="stylesheet" href="./test.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="test.css"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="main">
+    
       <div class="container b-container" id="b-container">
         <form class="form" id="b-form" method="" action="">
           <h2 class="form_title title">Sign in to Website</h2>
@@ -16,11 +26,33 @@
           <button class="form__button button submit">SIGN IN</button>
         </form>
       </div>
+
+
       <div class="switch" id="switch-cnt">
+        <div class="switch__circle"></div>
+        <div class="switch__circle switch__circle--t"></div>
+        <div class="switch__container" id="switch-c1">
           <h2 class="switch__title title">Welcome Back !</h2>
-          <button class="form__button button submit">SIGN IN</button><a href="test2.html"></a>
+          <p class="switch__description description">To keep connected with us please login with your personal info</p>
+
+          <button  class="switch__button button switch-btn">SIGN UP</button>
+          
+        </div>
+        <div class="switch__container is-hidden" id="switch-c2">
+          <h2 class="switch__title title">Hello Friend !</h2>
+          <p class="switch__description description">Enter your personal details and start journey with us</p>
+
+          <a href="./test.html">
+          <button class="switch__button button switch-btn">SIGN UP</button>
+          
+          </a>
+        </div>
       </div>
     </div>
-    <script src="test.js"></script>
+    <Scripts src="test.js"></Scripts>
+
   </body>
+</html>
+
+</body>
 </html>
