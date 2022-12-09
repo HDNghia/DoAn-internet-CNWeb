@@ -161,7 +161,7 @@ $(".agreeOrder").click(function () {
             if (localStorage.key(i) == "loginUser" || localStorage.key(i) == "id" || localStorage.key(i) == "loginAdmin") { }
             else {
                 var x = localStorage.getItem(localStorage.key(i));
-                name_product = name_product + " " + x.substring(x.indexOf(",") + 1, x.lastIndexOf(",") - 1)
+                name_product = name_product + " " + x.substring(x.indexOf(",") + 1, x.lastIndexOf(","))
                 price_product = price_product + parseInt(x.substring(x.lastIndexOf(",") + 2, x.length))
             }
         }
