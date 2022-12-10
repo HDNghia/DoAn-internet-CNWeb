@@ -146,7 +146,7 @@ $(".agreeOrder").click(function () {
             customer_address: ""
         }
 
-        var today = new Date();
+        var today = String(new Date());
         var dd = String(today.getDate()).padStart(2, '0');
         var mm = String(today.getMonth() + 1).padStart(2, '0');
         var yyyy = today.getFullYear();
@@ -166,7 +166,7 @@ $(".agreeOrder").click(function () {
             }
         }
         data.food = name_product;
-        data.status = "delivery";
+        data.status = "Ordered";
         data.order_date = today;
         data.price = price_product;
         data.qty = "1";

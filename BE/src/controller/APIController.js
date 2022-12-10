@@ -47,7 +47,7 @@ let updateUser = async (req, res) => {
 
 }
 let deleteUser = async (req, res) => {
-    console.log('check id: ', req.params.id);
+    // console.log('check id: ', req.params.id);
     let deleteId = req.params.id;
     if (!deleteId) {
         return res.status(200).json({
@@ -62,7 +62,7 @@ let deleteUser = async (req, res) => {
     })
 }
 let getDetailUser = async (req, res) => {
-    console.log('check id: ', req.params.id);
+    // console.log('check id: ', req.params.id);
     let userId = req.params.id;
     if (!userId) {
         return res.status(200).json({
@@ -84,7 +84,7 @@ let getDetailUser = async (req, res) => {
     // await pool.execute('select * from tbl_order where id = ?', [tbl_order])
 }
 let getUserForName = async (req, res) => {
-    console.log('check customer_name: ', req.params.customer_name);
+    // console.log('check customer_name: ', req.params.customer_name);
     let customer_name = req.params.customer_name;
     if (!customer_name) {
         return res.status(200).json({

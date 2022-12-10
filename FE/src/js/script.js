@@ -13,14 +13,14 @@ let next = () => {
 let looping = setInterval(next, 2000);
 // end swiping banners
 
-let searchForm = document.querySelector('.search-form');
+// let searchForm = document.querySelector('.search-form');
 
-document.querySelector('#search-btn').onclick = () => {
-  searchForm.classList.toggle('active');
-  shoppingCart.classList.remove('active');
-  loginForm.classList.remove('active');
-  navbar.classList.remove('active');
-}
+// document.querySelector('#search-btn').onclick = () => {
+//   searchForm.classList.toggle('active');
+//   shoppingCart.classList.remove('active');
+//   loginForm.classList.remove('active');
+//   navbar.classList.remove('active');
+// }
 
 let shoppingCart = document.querySelector('.shopping-cart');
 
