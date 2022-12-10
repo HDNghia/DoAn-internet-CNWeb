@@ -40,7 +40,7 @@ if (localStorage.getItem("loginAdmin") == "true") {
                 var tr = document.createElement("tr");
                 var td1 = document.createElement("td");
                 var td2 = document.createElement("td");
-                var td3 = document.createElement("td");
+                // var td3 = document.createElement("td");
                 var td4 = document.createElement("td");
                 var td5 = document.createElement("td");
                 var td6 = document.createElement("td");
@@ -62,7 +62,7 @@ if (localStorage.getItem("loginAdmin") == "true") {
 
                 td1.append(data.data[i].food)
                 td2.append(data.data[i].price + "$")
-                td3.append(data.data[i].qty)
+                // td3.append(data.data[i].qty)
                 td4.append(data.data[i].total + "$")
                 td5.append(data.data[i].order_date)
                 td6.append(data.data[i].status)
@@ -75,7 +75,7 @@ if (localStorage.getItem("loginAdmin") == "true") {
 
                 tr.append(td1)
                 tr.append(td2)
-                tr.append(td3)
+                // tr.append(td3)
                 tr.append(td4)
                 tr.append(td5)
                 tr.append(td6)
@@ -166,10 +166,45 @@ function deleteOrder(id) {
         })
 
 }
-
 function FindNameCustomer(data) {
     // alert('nghia')
     $(".order").empty()
+    var trr = document.createElement("tr");
+    var th1 = document.createElement("td");
+    var th2 = document.createElement("td");
+    var th3 = document.createElement("td");
+    var th4 = document.createElement("td");
+    var th5 = document.createElement("td");
+    var th6 = document.createElement("td");
+    var th7 = document.createElement("td");
+    var th8 = document.createElement("td");
+    var th9 = document.createElement("td");
+    var th10 = document.createElement("td");
+
+    th1.append("Food")
+    th2.append("Price")
+    th3.append("Total")
+    th4.append("Order Date")
+    th5.append("Status")
+    th6.append("Customer Name")
+    th7.append("Contact")
+    th8.append("Email")
+    th9.append("Adress")
+    th10.append("Actions")
+
+    trr.append(th1)
+    trr.append(th2)
+    trr.append(th3)
+    trr.append(th4)
+    trr.append(th5)
+    trr.append(th6)
+    trr.append(th7)
+    trr.append(th8)
+    trr.append(th9)
+    trr.append(th10)
+
+    $(".order").append(trr)
+
     var option = {
         method: 'GET',
         headers: {
@@ -205,10 +240,19 @@ function FindNameCustomer(data) {
                 var tr = document.createElement("tr");
                 var td1 = document.createElement("td");
                 var td2 = document.createElement("td");
-                var td3 = document.createElement("td");
+                // var td3 = document.createElement("td");
                 var td4 = document.createElement("td");
                 var td5 = document.createElement("td");
                 var td6 = document.createElement("td");
+                if (data.data[i].status == "On Delivery") {
+                    td6.setAttribute("class", "text-warning");
+                }
+                else if (data.data[i].status == "Delivered") {
+                    td6.setAttribute("class", "text-success")
+                }
+                else if (data.data[i].status == "Cancelled") {
+                    td6.setAttribute("class", "text-danger")
+                }
                 var td7 = document.createElement("td");
                 var td8 = document.createElement("td");
                 var td9 = document.createElement("td");
@@ -218,7 +262,7 @@ function FindNameCustomer(data) {
 
                 td1.append(data.data[i].food)
                 td2.append(data.data[i].price + "$")
-                td3.append(data.data[i].qty)
+                // td3.append(data.data[i].qty)
                 td4.append(data.data[i].total + "$")
                 td5.append(data.data[i].order_date)
                 td6.append(data.data[i].status)
@@ -231,7 +275,7 @@ function FindNameCustomer(data) {
 
                 tr.append(td1)
                 tr.append(td2)
-                tr.append(td3)
+                // tr.append(td3)
                 tr.append(td4)
                 tr.append(td5)
                 tr.append(td6)
