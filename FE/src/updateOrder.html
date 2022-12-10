@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body onload="script();">
+    <div class="container w-50">
+        <!-- <form> -->
+        <div class="form-group">
+            <label for="food">food</label>
+            <input class="form-control food" onchange="CheckEdit()" id="food" placeholder="Enter food">
+        </div>
+        <div class="form-group">
+            <label for="price">price</label>
+            <input class="form-control price" onchange="CheckEdit()" id="price" placeholder="price">
+        </div>
+        <div class="form-group">
+            <label for="qty">qty</label>
+            <input class="form-control qty" onchange="CheckEdit()" id="qty" placeholder="qty">
+        </div>
+        <div class="form-group">
+            <label for="total">total</label>
+            <input class="form-control total" onchange="CheckEdit()" id="total" placeholder="total">
+        </div>
+        <div class="form-group">
+            <label for="price">order_date</label>
+            <input class="form-control order_date" onchange="CheckEdit()" id="order_date" placeholder="order_date">
+        </div>
+        <div class="form-group">
+            <label for="status">status</label>
+            <select class="form-control status" onchange="CheckEdit()">
+                <option value="Ordered">Ordered</option>
+                <option value="On Delivery">On Delivery</option>
+                <option value="Delivered">Delivered</option>
+                <option value="Cancelled">Cancelled</option>
+            </select>
+            <!-- <input class="form-control status" onchange="CheckEdit()" id="price" placeholder="status"> -->
+        </div>
+        <div class="form-group">
+            <label for="customer_name">customer_name</label>
+            <input class="form-control customer_name" onchange="CheckEdit()" id="customer_name"
+                placeholder="customer_name">
+        </div>
+        <div class="form-group">
+            <label for="customer_contact">customer_contact</label>
+            <input class="form-control customer_contact" onchange="CheckEdit()" id="customer_contact"
+                placeholder="customer_contact">
+        </div>
+        <div class="form-group">
+            <label for="customer_email">customer_email</label>
+            <input class="form-control customer_email" onchange="CheckEdit()" id="customer_email"
+                placeholder="customer_email">
+        </div>
+        <div class="form-group">
+            <label for="customer_address">customer_address</label>
+            <input class="form-control customer_address" onchange="CheckEdit()" id="price"
+                placeholder="customer_address">
+        </div>
+        <input class="id" hidden />
+        <input type="button" class="btn btn-primary" onclick="updateOrder()" value="Update">
+        <!-- </form> -->
+    </div>
+
+    <script>
+        var option = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        };
+        fetch('http://localhost:8080/api/v1/users' + '/' + localStorage.getItem('id'), option)
+            .then(data => {
+                return data.json()
+            })
+            .then(data => {
+                // var food = document.getElementsByClassName("food");
+                // food.setAttribute("value", "nghia")
+                $(".food").attr("value", data.data[0].food)
+                $(".price").attr("value", data.data[0].price)
+                $(".qty").attr("value", data.data[0].qty)
+                $(".total").attr("value", data.data[0].total)
+                $(".order_date").attr("value", data.data[0].order_date)
+                $(".status").attr("value", data.data[0].status)
+                $(".customer_name").attr("value", data.data[0].customer_name)
+                $(".customer_contact").attr("value", data.data[0].customer_contact)
+                $(".customer_email").attr("value", data.data[0].customer_email)
+                $(".customer_address").attr("value", data.data[0].customer_address)
+                $(".id").attr("value", data.data[0].id)
+                console.log('check data', data)
+                console.log("check id", $(".id").val())
+            })
+        var dulieu = {}
+        function CheckEdit() {
+            console.log("check qury", $(".food").val())
+            dulieu = {
+                food: $(".food").val(),
+                price: $(".price").val(),
+                qty: $(".qty").val(),
+                total: $(".total").val(),
+                order_date: $(".order_date").val(),
+                status: $(".status").val(),
+                customer_name: $(".customer_name").val(),
+                customer_contact: $(".customer_contact").val(),
+                customer_email: $(".customer_email").val(),
+                customer_address: $(".customer_address").val(),
+                id: $(".id").val(),
+
+            }
+        }
+        async function putData(url = '', data = {}) {
+            const response = await fetch(url, {
+                method: 'PUT',
+                mode: 'cors',
+                cache: 'no-cache',
+                credentials: 'same-origin',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
+                body: JSON.stringify(data)
+            })
+            return response.json();
+        }
+        function updateOrder() {
+            putData('http://localhost:8080/api/v1/update-user', dulieu)
+            localStorage.removeItem("id");
+            window.location.replace("http://127.0.0.1:5502/src/adminpage.html");
+        }
+    </script>
+</body>
+
+</html>
