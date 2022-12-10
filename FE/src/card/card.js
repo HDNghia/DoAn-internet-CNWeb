@@ -145,8 +145,7 @@ $(".agreeOrder").click(function () {
             customer_email: "",
             customer_address: ""
         }
-
-        var today = String(new Date());
+        var today = new Date();
         var dd = String(today.getDate()).padStart(2, '0');
         var mm = String(today.getMonth() + 1).padStart(2, '0');
         var yyyy = today.getFullYear();
@@ -157,6 +156,7 @@ $(".agreeOrder").click(function () {
         data.customer_email = $(".email").val();
         var name_product = [];
         var price_product = 0;
+
         for (var i = 0; i < localStorage.length; i++) {
             if (localStorage.key(i) == "loginUser" || localStorage.key(i) == "id" || localStorage.key(i) == "loginAdmin") { }
             else {
@@ -177,6 +177,7 @@ $(".agreeOrder").click(function () {
         let isValid = true;
         let arrInput = ['customer_name', 'customer_contact', 'customer_email', 'customer_address']
         for (let i = 0; i < arrInput.length; i++) {
+            // alert("nghia")
             console.log('check inside loop', data[arrInput[i]], arrInput[i])
             if (!data[arrInput[i]]) {
                 isValid = false;
@@ -184,17 +185,16 @@ $(".agreeOrder").click(function () {
                 return;
             }
         }
-
-        var div = document.createElement("div");
-        div.setAttribute("class", "alert alert-success");
-        div.append("order success")
-        $(".alert1").append(div);
+        // var div = document.createElement("div");
+        // div.setAttribute("class", "alert alert-success");
+        // div.append("order success")
+        // $(".alert1").append(div);
         postData('http://localhost:8080/api/v1/create-user', data)
             .then(data => {
                 console.log(data);
             })
         // <a href="../../index.html#features">features</a>
-
+        alert("Order success")
     }
     else {
         window.location.replace("../login.html");
