@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Complete Responsive Grocery Website Design Tutorial</title>
 
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("../header.html");
+            $("#footer").load("../footer.html");
+        }); 
+    </script>
+
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
     <!-- font awesome cdn link  -->
@@ -14,7 +22,7 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="./freshFruits.css">
+    <link rel="stylesheet" href="./vegitables.css">
 
     <!-- font awesome4 link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
@@ -25,88 +33,15 @@
 
     <!-- header section starts  -->
 
-    <header class="header">
-
-        <a href="#" class="logo"> <i class="fa fa-cutlery" aria-hidden="true"></i> UIT </a>
-
-        <nav class="navbar">
-            <a href="../index.html">home</a>
-            <a href="#features">features</a>
-            <a href="#products">products</a>
-            <a href="#categories">categories</a>
-            <a href="#review">review</a>
-            <a href="#blogs">blogs</a>
-        </nav>
-
-        <div class="icons">
-            <div class="fas fa-bars" id="menu-btn"></div>
-            <div class="fas fa-search" id="search-btn"></div>
-            <div class="fas fa-shopping-cart" id="cart-btn"></div>
-            <div class="fas fa-user" id="login-btn"></div>
-        </div>
-
-        <form action="" class="search-form">
-            <input type="search" id="search-box" placeholder="search here...">
-            <label for="search-box" class="fas fa-search"></label>
-        </form>
-
-        <div class="shopping-cart">
-            <div class="box">
-                <i class="fas fa-trash"></i>
-                <img src="../../image/cart-img-1.png" alt="">
-                <div class="content">
-                    <h3>watermelon</h3>
-                    <span class="price">$4.99/-</span>
-                    <span class="quantity">qty : 1</span>
-                </div>
-            </div>
-            <div class="box">
-                <i class="fas fa-trash"></i>
-                <img src="../../image/cart-img-2.png" alt="">
-                <div class="content">
-                    <h3>onion</h3>
-                    <span class="price">$4.99/-</span>
-                    <span class="quantity">qty : 1</span>
-                </div>
-            </div>
-            <div class="box">
-                <i class="fas fa-trash"></i>
-                <img src="../../image/cart-img-3.png" alt="">
-                <div class="content">
-                    <h3>chicken</h3>
-                    <span class="price">$4.99/-</span>
-                    <span class="quantity">qty : 1</span>
-                </div>
-            </div>
-            <div class="total"> total : $19.69/- </div>
-            <a href="#" class="btn">checkout</a>
-        </div>
-
-        <form action="" class="login-form">
-            <h3>login now</h3>
-            <input type="email" placeholder="your email" class="box">
-            <input type="password" placeholder="your password" class="box">
-            <p>forget your password <a href="#">click here</a></p>
-            <p>don't have an account <a href="#">create now</a></p>
-            <input type="submit" value="login now" class="btn">
-        </form>
-
-    </header>
+    <div id="header"></div>
 
     <!-- header section ends -->
 
     <!-- home section starts  -->
-
-    <section class="home" id="home">
-
-        <div class="content">
-            <h3>fresh and <span>organic</span> products for your</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam libero nostrum veniam facere tempore
-                nisi.</p>
-            <a href="#" class="btn">shop now</a>
-        </div>
-
-    </section>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <div>
+        <img class="slide" src="../image/ban1 (1).png" alt="_" width="100%" active="next">
+    </div>
 
     <!-- home section ends -->
 
@@ -344,52 +279,7 @@
 
     <!-- footer section starts  -->
 
-    <section class="footer">
-
-        <div class="box-container">
-
-            <div class="box">
-                <h3> UIT <i class="fas fa-shopping-basket"></i> </h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, saepe.</p>
-                <div class="share">
-                    <a href="#" class="fab fa-facebook-f"></a>
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                    <a href="#" class="fab fa-linkedin"></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <h3>contact info</h3>
-                <a href="#" class="links"> <i class="fas fa-phone"></i> +123-456-7890 </a>
-                <a href="#" class="links"> <i class="fas fa-phone"></i> +111-222-3333 </a>
-                <a href="#" class="links"> <i class="fas fa-envelope"></i> shaikhanas@gmail.com </a>
-                <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i> mumbai, india - 400104 </a>
-            </div>
-
-            <div class="box">
-                <h3>quick links</h3>
-                <a href="#" class="links"> <i class="fas fa-arrow-right"></i> home </a>
-                <a href="#" class="links"> <i class="fas fa-arrow-right"></i> features </a>
-                <a href="#" class="links"> <i class="fas fa-arrow-right"></i> products </a>
-                <a href="#" class="links"> <i class="fas fa-arrow-right"></i> categories </a>
-                <a href="#" class="links"> <i class="fas fa-arrow-right"></i> review </a>
-                <a href="#" class="links"> <i class="fas fa-arrow-right"></i> blogs </a>
-            </div>
-
-            <div class="box">
-                <h3>newsletter</h3>
-                <p>subscribe for latest updates</p>
-                <input type="email" placeholder="your email" class="email">
-                <input type="submit" value="subscribe" class="btn">
-                <img src="image/payment.png" class="payment-img" alt="">
-            </div>
-
-        </div>
-
-        <div class="credit"> created by <span>Team 6</span> | all rights reserved </div>
-
-    </section>
+    <div id="footer"></div>
 
     <!-- footer section ends -->
 

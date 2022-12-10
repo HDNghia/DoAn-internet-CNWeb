@@ -621,17 +621,6 @@ body {
 
 /* Snow effects end */
 
-#footer * {
-    font-size: 100%;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    scroll-padding-top: 7rem;
-}
-
-.footer>* {
-    font-size: 62.5%;
-}
-
 /* html body {
     font-size: 100%;
 } */
@@ -687,6 +676,16 @@ td img {
     width: 100px;
 }
 
-html td {
-    font-size: 100%;
+.credit {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    padding-top: 2.5rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    border-top: var(--border);
+}
+
+.credit span {
+    color: var(--orange);
 }

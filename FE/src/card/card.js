@@ -1,12 +1,12 @@
-// import 'regenerator-runtime/runtime';
-// import axios from 'axios';
-// localStorage.setItem("login", false);
+
+var total_price = 0;
 
 var stt = 1;
 for (var i = 0; i < localStorage.length; i++) {
     //add-card
     if (localStorage.key(i) == "loginUser" || localStorage.key(i) == "id" || localStorage.key(i) == "loginAdmin") { }
     else {
+
         var tr = document.createElement("tr");
         var img = document.createElement("img");
         var remove = document.createElement("input");
@@ -30,6 +30,7 @@ for (var i = 0; i < localStorage.length; i++) {
             td.append(item[j]);
             tr.append(td);
         }
+        total_price = total_price + parseInt(x.substring(x.lastIndexOf(",") + 2, x.length))
         stt = stt + 1;
         $(".order").append(tr);
 
@@ -53,6 +54,7 @@ for (var i = 0; i < localStorage.length; i++) {
         }
     }
 }
+$(".total").append(total_price);
 
 //get data
 // fetch('http://localhost:8080/api/v1/users')
