@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Responsive Grocery Website Design Tutorial</title>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        }); 
+    </script>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- font awesome4 link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+    <div id="header"></div>
+
+    <!-- header section ends -->
+
+    <!-- home section starts  -->
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <div>
+        <img class="slide" src="./image/ban1 (1).png" alt="_" width="100%" active="next">
+        <img class="slide" src="./image/ban2.png" alt="_" width="100%">
+    </div>
+
+    <!-- home section ends -->
+
+    <!-- features section starts  -->
+
+    <section class="features" id="features">
+
+        <h1 class="heading"> our <span>features</span> </h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="image/Free shipping-pana.png" alt="">
+                <h3>Free Ship</h3>
+            </div>
+
+            <div class="box">
+                <img src="image/Messenger-amico.png" alt="">
+                <h3>Fast Delivery</h3>
+            </div>
+
+            <div class="box">
+                <img src="image/E-Wallet-pana.png" alt="">
+                <h3>Fast Payments</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- features section ends -->
+
+    <!-- products section starts  -->
+
+    <section class="products" id="products">
+
+        <h1 class="heading"> our <span>products</span> </h1>
+
+        <div class="swiper product-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="product-item swiper-slide box">
+                    <img class="image-product" src="image/fried-shrimp-prawn-cake-white-plate.jpg" alt="">
+                    <h3 class="name-product">Chicken</h3>
+                    <div class="price-product price"> $10 </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <button class="btn add-to-cart-btn">add to cart</button>
+                </div>
+
+                <div class="product-item swiper-slide box">
+                    <img class="image-product" src="image/sabrina-wendl-MQMORoiNgEc-unsplash.jpg" alt="">
+                    <h3 class="name-product">strawberry</h3>
+                    <div class="price-product price"> $15 </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button class="btn add-to-cart-btn">add to cart</button>
+                </div>
+
+                <div class="product-item swiper-slide box">
+                    <img class="image-product" src="image/alessandro-rossi-dCTcUYWwEc8-unsplash.jpg" alt="">
+                    <h3 class="name-product">shrimp meat</h3>
+                    <div class="price-product price"> $5 </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button class="btn add-to-cart-btn">add to cart</button>
+                </div>
+
+                <div class="product-item swiper-slide box">
+                    <img class="image-product" src="image/quaritsch-photography-nqLX3lIV7C0-unsplash.jpg" alt="">
+                    <h3 class="name-product">Cherry</h3>
+                    <div class="price-product price"> $4 </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button class="btn add-to-cart-btn">add to cart</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="swiper product-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="product-item swiper-slide box">
+                    <img class="image-product" src="image/product-4 copy.png" alt="">
+                    <h3 class="name-product">cheese</h3>
+                    <div class="price-product price"> $2 </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button class="btn add-to-cart-btn">add to cart</button>
+                </div>
+
+                <div class="product-item swiper-slide box">
+                    <img class="image-product" src="image/product-5 copy.png" alt="">
+                    <h3 class="name-product">Tofu</h3>
+                    <div class="price-product price"> $1 </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button class="btn add-to-cart-btn">add to cart</button>
+                </div>
+
+                <div class="product-item swiper-slide box">
+                    <img class="image-product" src="image/product-6 copy.png" alt="">
+                    <h3 class="name-product">Butter</h3>
+                    <div class="price-product price"> $4 </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button class="btn add-to-cart-btn">add to cart</button>
+                </div>
+
+                <div class="product-item swiper-slide box">
+                    <img class="image-product" src="image/product-7 copy.png" alt="">
+                    <h3 class="name-product">ice Cream</h3>
+                    <div class="price-product price"> $5 </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button class="btn add-to-cart-btn">add to cart</button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <!-- products section ends -->
+
+    <!-- categories section starts  -->
+
+    <section class="categories" id="categories">
+
+        <h1 class="heading"> product <span>categories</span> </h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="image/pngegg.png" alt="">
+                <h3>vegetables</h3>
+                <p>upto 5% off</p>
+                <a href="categories/vegitables.html" class="btn">shop now</a>
+            </div>
+
+            <div class="box">
+                <img src="image/pngegg (1).png" alt="">
+                <h3>fresh fruits</h3>
+                <p>upto 5% off</p>
+                <a href="categories/freshFruits.html" class="btn">shop now</a>
+            </div>
+            <div class="box">
+                <img src="image/pngegg (2).png" alt="">
+                <h3>dairy products</h3>
+                <p>upto 5% off</p>
+                <a href="categories/dairyProducts.html" class="btn">shop now</a>
+            </div>
+
+            <div class="box">
+                <img src="image/pngegg (3).png" alt="">
+                <h3>fresh meat</h3>
+                <p>upto 5% off</p>
+                <a href="categories/freshMeat.html" class="btn">shop now</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- categories section ends -->
+
+    <!-- review section starts  -->
+
+    <section class="review" id="review">
+
+        <h1 class="heading"> customer's <span>review</span> </h1>
+
+        <div class="swiper review-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box">
+                    <img src="image/pngegg (4).png" alt="">
+                    <p>Your food is very delicious.</p>
+                    <h3>Ronaldo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="https://img.uefa.com/imgml/TP/players/1/2023/324x324/95803.jpg" alt="">
+                    <p>I like strawberry in your store.</p>
+                    <h3>Leo messi</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="image/pngegg (9).png" alt="">
+                    <p>Food in your store is very expensive.</p>
+                    <h3>Neymar</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="https://img.a.transfermarkt.technology/portrait/big/418560-1656179352.jpg?lm=1" alt="">
+                    <p>lobster in your store is pretty good.</p>
+                    <h3>Haaland</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- review section ends -->
+
+    <!-- blogs section starts  -->
+
+    <section class="blogs" id="blogs">
+
+        <h1 class="heading"> our <span>blogs</span> </h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="image/vi2.webp" alt="">
+                <div class="content">
+                    <div class="icons">
+                        <a href="#"> <i class="fas fa-user"></i> Tường Vi </a>
+                        <a href="#"> <i class="fas fa-calendar"></i> 22st Oct, 2022 </a>
+                    </div>
+                    <h3>Mushroom Gravy Recipe Robust</h3>
+                    <p>A robust, clean mushroom flavor makes this a great gravy to smother on steak, biscuits,
+                        mashed
+                        potatoes, pork chops, and morebiscuits, mashed.</p>
+                    <a href="./blog/blog1.html" class="btn">read more</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="image/vi3.webp" alt="">
+                <div class="content">
+                    <div class="icons">
+                        <a href="#"> <i class="fas fa-user"></i> Huỳnh Tuyền </a>
+                        <a href="#"> <i class="fas fa-calendar"></i> 3st July, 2022 </a>
+                    </div>
+                    <h3>Homemade Plum Jam Recipe</h3>
+                    <p>Epsom salt is powerful desiccant that can help extend the shelf life of your pies (and don't
+                        worry, we're not telling you to eat it) .</p>
+                    <a href="./blog/blog2.html" class="btn">read more</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="image/vi1.webp" alt="">
+                <div class="content">
+                    <div class="icons">
+                        <a href="#"> <i class="fas fa-user"></i> Hương Bang </a>
+                        <a href="#"> <i class="fas fa-calendar"></i> 7st april, 2022 </a>
+                    </div>
+                    <h3>Buttery, Flaky Pie Crust Recipe</h3>
+                    <p>Buttery, flaky, tender, and easy pie dough recipe that requires no special equipment,
+                        ingredients, or trainingingredients, or training.</p>
+                    <a href="./blog/blog.html" class="btn">read more</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- blogs section ends -->
+
+
+
+    <!-- footer section starts  -->
+    <div id="footer"></div>
+    <!-- footer section ends -->
+    <!-- Snow effects -->
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+    </div>
+    <!-- Snow effects -->
+    <!-- Banner slideshow -->
+    <script>
+        w3.slideshow(".slide", 2500);
+    </script>
+    <!-- End banner slideshow -->
+
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+
+    <script src="js/adjustCart.js"></script>
+
+</body>
+
+</html>
