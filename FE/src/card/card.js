@@ -197,6 +197,7 @@ $(".agreeOrder").click(function () {
             })
         // <a href="../../index.html#features">features</a>
         alert("Order success")
+        window.location.replace("../index.html");
     }
     else {
         window.location.replace("../login.html");
